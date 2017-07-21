@@ -41,6 +41,16 @@ type LobbyOption struct {
 
 type GameOption struct {
 	GwHost 		string
+	Moudles 	[]GameModule
+}
+
+type GameCreateor func() IGame
+type GameReleaser func(IGame)
+type GameModule struct {
+	Type 		int
+	Creator 	GameCreateor
+	Releaser 	GameReleaser
+	GameData 	interface{}
 }
 
 type CommunicatorOption struct {

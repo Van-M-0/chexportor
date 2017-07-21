@@ -18,7 +18,7 @@ type ILobby interface {
 	IServer
 }
 
-type IGame interface {
+type IGameServer interface {
 	IServer
 }
 

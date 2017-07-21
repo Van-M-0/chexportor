@@ -20,10 +20,10 @@ type PlayerLoginRet struct {
 
 type PlayerCreateRoom struct {
 	//common
-	Type 		int
+	Kind 		int
 	Enter 		bool
 	//special
-	conf 		[]byte
+	Conf 		[]byte
 }
 
 type PlayerCreateRoomRet struct {

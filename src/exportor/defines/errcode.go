@@ -22,10 +22,14 @@ const (
 	ErrCreateRoomSuccess		= 101
 	ErrCreateRoomUserNotIn		= 102
 	ErrCreateRoomWait			= 103
+	ErrCreateRoomKind 			= 104
+	ErrCreateRoomGameMoudele	= 105
+	ErrCreateRoomSystme			= 106
 
 	ErrEnterRoomSuccess			= 101
 	ErrEnterRoomUserNotIn		= 102
 	ErrEnterRoomNotExists 		= 103
+	ErrEnterRoomMoudle			= 104
 
 	ErrLeaveRoomSuccess			= 101
 	ErrLeaveRoomUserNotIn		= 102
