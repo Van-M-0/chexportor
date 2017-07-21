@@ -29,6 +29,7 @@ type IGameManager interface {
 
 type IGame interface {
 	OnInit(manager IGameManager, Option interface{}) error
+	OnRelease()
 	OnGameCreate(info *PlayerInfo, conf *CreateRoomConf) error
 	OnUserEnter(info *PlayerInfo) error
 	OnUserLeave(info *PlayerInfo)
