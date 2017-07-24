@@ -5,6 +5,7 @@ const (
 	ErrCommonSuccess			= 1
 	ErrCommonCache 				= 2
 	ErrCommonWait				= 3
+	ErrCoomonSystem 			= 4
 
 	ErrClientLoginWait 	  		= 100
 	ErrClientLoginNeedCreate	= 1001
