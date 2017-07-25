@@ -23,3 +23,13 @@ type PMCreateAccountFinish struct {
 	Account 	string
 	Pwd 		string
 }
+
+type PMUserCreateRoom struct {
+	ServerId 	uint32
+	Uid 		uint32
+	Message 	PlayerCreateRoom
+}
+
+type PMUserCreateRoomRet struct {
+	Err 		int
+}

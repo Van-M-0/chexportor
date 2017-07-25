@@ -3,9 +3,13 @@ package proto
 // lobby proto 1000 - 2000
 
 const (
-	CmdClientLogin   = 1001
-	CmdGuestLogin    = 1002
-	CmdCreateAccount = 1003
+	CmdClientLogin   	= 1001
+	CmdGuestLogin    	= 1002
+	CmdCreateAccount 	= 1003
+	CmdWechatLogin	 	= 1004
+
+	CmdCreateRoom 		= 1005
+	CmdEnterRoom 		= 1006
 )
 
 type ClientLogin struct {
@@ -33,4 +37,34 @@ type CreateAccountRet struct {
 	ErrCode 	int
 	Account 	string
 	Pwd 		string
+}
+
+type WechatLoginReq struct {
+	Code 		string
+	Device 		string
+}
+
+type WechatLoginRet struct {
+	Account 	string
+}
+
+type UserCreateRoomReq struct {
+	Kind 		int
+	Enter 		bool
+
+	//special
+	Conf 		[]byte
+}
+
+type UserCreateRoomRet struct {
+	ErrCode 	int
+	RoomId		uint32
+}
+
+type UserEnterRoomReq struct {
+
+}
+
+type UserEnterRoomRet struct {
+
 }

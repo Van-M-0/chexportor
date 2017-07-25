@@ -57,6 +57,9 @@ type ICacheClient interface {
 	GetUserInfo(name string, user *proto.CacheUser) error
 	GetUserInfoById(uid uint32, user *proto.CacheUser) error
 	SetUserInfo(d interface{}, dbRet bool) error
+	SetServer(server *proto.CacheServer) error
+	GetServers() ([]*proto.CacheServer, error)
+	UpdateServer(server *proto.CacheServer) error
 }
 
 type ICacheLoader interface {

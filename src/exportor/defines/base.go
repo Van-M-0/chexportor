@@ -15,4 +15,8 @@ const (
 	ChannelLoadUserFinish	= "loadUserFinish"
 	ChannelCreateAccount 	= "createAccount"
 	ChannelCreateAccountFinish = "createAccountFinish"
+
+	ChannelTypeLobby 		= "lobby"
+	ChannelCreateRoom 		= "lobbyCreateRoom"
+	ChannelCreateRoomFinish = "lobbyCreateRoomRes"
 )

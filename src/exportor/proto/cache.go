@@ -20,4 +20,8 @@ type CacheUser struct {
 	RoomId 		int 		`redis:"roomid"`
 }
 
-
+type CacheServer struct {
+	Type 			string		`redis:"type,omitempty"`
+	Id 				int 		`redis:"id,omitempty"`
+	OnlineCount 	int			`redis:"onlinecount,omitempty"`
+}
