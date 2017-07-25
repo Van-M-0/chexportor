@@ -18,5 +18,8 @@ const (
 
 	ChannelTypeLobby 		= "lobby"
 	ChannelCreateRoom 		= "lobbyCreateRoom"
-	ChannelCreateRoomFinish = "lobbyCreateRoomRes"
+	ChannelCreateRoomFinish = "lobbyCreateRoomFinish"
+
+	ChannelEnterRoom		= "lobbyEnterRoom"
+	ChannelEnterRoomFinish  = "lobbyEnterRoomFinish"
 )

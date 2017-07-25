@@ -25,11 +25,21 @@ type PMCreateAccountFinish struct {
 }
 
 type PMUserCreateRoom struct {
-	ServerId 	uint32
+	ServerId 	int
 	Uid 		uint32
-	Message 	PlayerCreateRoom
+	Message 	UserCreateRoomReq
 }
 
 type PMUserCreateRoomRet struct {
-	Err 		int
+	ErrCode 	int
+}
+
+type PMUserEnterRoom struct {
+	ServerId 	int
+	RoomId 		uint32
+	Uid 		uint32
+}
+
+type PMUserEnterRoomRet struct {
+	ErrCode 	int
 }

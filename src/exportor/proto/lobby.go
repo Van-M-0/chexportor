@@ -10,6 +10,7 @@ const (
 
 	CmdCreateRoom 		= 1005
 	CmdEnterRoom 		= 1006
+	CmdLeaveRoom 		= 1007
 )
 
 type ClientLogin struct {
@@ -49,6 +50,7 @@ type WechatLoginRet struct {
 }
 
 type UserCreateRoomReq struct {
+	RoomId 		uint32
 	Kind 		int
 	Enter 		bool
 
@@ -62,9 +64,9 @@ type UserCreateRoomRet struct {
 }
 
 type UserEnterRoomReq struct {
-
+	RoomId 		uint32
 }
 
 type UserEnterRoomRet struct {
-
+	ErrCode 	int
 }
