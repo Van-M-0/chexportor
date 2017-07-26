@@ -43,3 +43,13 @@ type PlayerGameMessage struct {
 	Cmd 		uint32
 	Msg 		[]byte
 }
+
+type PlayerGameMessageRet struct {
+	Cmd 		uint32
+	Msg 		interface{}
+}
+
+type PlayerSubGameMessageRet struct {
+	Cmd 		uint32
+	Msg 		interface{}
+}

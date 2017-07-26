@@ -12,6 +12,10 @@ const (
 
 	ErrCreateAccountErr			= 100
 	ErrCreateAccountWait 		= 101
+
+	ErrClientBuyItemNotExists	= 101
+	ErrClientBuyItemMoneyNotEnough = 102
+	ErrClientBuyItemTime 		= 103
 )
 
 // game

@@ -43,3 +43,11 @@ type PMUserEnterRoom struct {
 type PMUserEnterRoomRet struct {
 	ErrCode 	int
 }
+
+type PMMallItemUdpate struct {
+	Items 		[]MallItem
+}
+
+type PMMallItemLoaded struct {
+	Items 		[]MallItem
+}

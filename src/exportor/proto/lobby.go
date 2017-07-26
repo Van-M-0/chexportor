@@ -11,6 +11,13 @@ const (
 	CmdCreateRoom 		= 1005
 	CmdEnterRoom 		= 1006
 	CmdLeaveRoom 		= 1007
+
+	CmdClientLoadMallItem = 1008
+	CmdClientBuyItem 	= 1009
+
+	CmdUserLoadNotice	= 1010
+	CmdUserSendMessage	= 1011
+
 )
 
 type ClientLogin struct {
