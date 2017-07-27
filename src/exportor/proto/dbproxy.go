@@ -41,6 +41,7 @@ type PMUserEnterRoom struct {
 }
 
 type PMUserEnterRoomRet struct {
+	Uid 		uint32
 	ErrCode 	int
 }
 
@@ -50,4 +51,8 @@ type PMMallItemUdpate struct {
 
 type PMMallItemLoaded struct {
 	Items 		[]MallItem
+}
+
+type PmNoticeUpdate struct {
+	Content 	string
 }

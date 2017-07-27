@@ -3,6 +3,8 @@ package proto
 // game proto 5000 - 6000
 const (
 	CmdGamePlayerLogin 			= 5001
+	CmdGameCreateRoom			= 5002
+	CmdGameEnterRoom			= 5003
 	CmdGamePlayerMessage 		= 5020
 )
 
@@ -40,8 +42,8 @@ type PlayerLeaveRoomRet struct {
 }
 
 type PlayerGameMessage struct {
-	Cmd 		uint32
-	Msg 		[]byte
+	A 		uint32
+	B 		[]byte
 }
 
 type PlayerGameMessageRet struct {

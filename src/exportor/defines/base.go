@@ -27,7 +27,7 @@ const (
 
 	ChannelTtypeNotice		= "notice"
 		ChannelUpdateNotice		= "noticeUpdate"
-		ChannelUpdateLoad 		= "noticeUpdate"
+		ChannelLoadNotice	= "noticeLoad"
 
 
 )
