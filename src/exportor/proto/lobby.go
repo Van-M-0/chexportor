@@ -11,6 +11,7 @@ const (
 	CmdCreateRoom 		= 1005
 	CmdEnterRoom 		= 1006
 	CmdLeaveRoom 		= 1007
+	CmdDestoyRooom 		= 1008
 
 	CmdClientLoadMallItem = 1008
 	CmdClientBuyItem 	= 1009
@@ -54,26 +55,4 @@ type WechatLoginReq struct {
 
 type WechatLoginRet struct {
 	Account 	string
-}
-
-type UserCreateRoomReq struct {
-	RoomId 		uint32
-	Kind 		int
-	Enter 		bool
-
-	//special
-	Conf 		[]byte
-}
-
-type UserCreateRoomRet struct {
-	ErrCode 	int
-	RoomId		uint32
-}
-
-type UserEnterRoomReq struct {
-	RoomId 		uint32
-}
-
-type UserEnterRoomRet struct {
-	ErrCode 	int
 }

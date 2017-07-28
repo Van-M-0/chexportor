@@ -8,6 +8,11 @@ const (
 	GateMsgTypeServer 			= 2
 )
 
+const (
+	GatePlayerConnected 		= 510
+	GatePlayerDisConnected 		= 511
+)
+
 type GateGameHeader struct {
 	//gw header
 	Uid 		uint32
@@ -34,4 +39,8 @@ type GameGateHeader struct {
 	Uids 		[]uint32
 	Cmd 		uint32
 	Msg 		[]byte
+}
+
+type GatePlayerConncection struct {
+	Uid 		uint32
 }

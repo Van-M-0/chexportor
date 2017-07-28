@@ -32,6 +32,9 @@ const (
 
 const (
 	CmdRegisterServer 			= 100
+	CmdRegisterServerRet 		= 101
+
+	CmdClientDisconnected 		= 102
 )
 
 type Message struct {
@@ -42,5 +45,9 @@ type Message struct {
 
 type RegisterServer struct {
 	Type 		string
+	ServerId 	int
+}
+
+type RegisterServerRet struct {
 	ServerId 	int
 }

@@ -27,7 +27,7 @@ type PMCreateAccountFinish struct {
 type PMUserCreateRoom struct {
 	ServerId 	int
 	Uid 		uint32
-	Message 	UserCreateRoomReq
+	Message 	PlayerCreateRoom
 }
 
 type PMUserCreateRoomRet struct {

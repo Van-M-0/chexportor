@@ -21,8 +21,10 @@ type CreateRoomConf struct {
 }
 
 type IGameManager interface {
+	ReleaseRoom()
+	GetRoomId() uint32
 	SendUserMessage(info *PlayerInfo, cmd uint32, data interface{})
-	BroadcastMessage(cmd uint32, data interface{})
+	BroadcastMessage(infos []*PlayerInfo, cmd uint32, data interface{})
 	SetTimer(id uint32, data interface{}) error
 	KillTimer(id uint32) error
 }

@@ -12,6 +12,7 @@ const (
 
 	ErrCreateAccountErr			= 100
 	ErrCreateAccountWait 		= 101
+	ErrCreateAccountExists 		= 102
 
 	ErrClientBuyItemNotExists	= 101
 	ErrClientBuyItemMoneyNotEnough = 102
@@ -30,6 +31,8 @@ const (
 	ErrCreateRoomKind 			= 104
 	ErrCreateRoomGameMoudele	= 105
 	ErrCreateRoomSystme			= 106
+	ErrCreateRoomHaveRoom 		= 107
+	ErrCreateRoomRoomId 		= 108
 
 	ErrEnterRoomSuccess			= 101
 	ErrEnterRoomUserNotIn		= 102

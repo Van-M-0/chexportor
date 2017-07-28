@@ -5,6 +5,8 @@ const (
 	CmdGamePlayerLogin 			= 5001
 	CmdGameCreateRoom			= 5002
 	CmdGameEnterRoom			= 5003
+	CmdGamePlayerLeaveRoom		= 5004
+	CmdGamePlayerReturn2lobby	= 5005
 	CmdGamePlayerMessage 		= 5020
 )
 
@@ -18,11 +20,19 @@ type PlayerLoginRet struct {
 	AccountTest			string
 	NameTest			string
 	UserIdTest			int
-	ErrCode 	int
+	ReEnter 			bool
+	ErrCode 			int
+}
+
+type PlayerCreateRoom struct {
+	Kind 			int
+	Enter 			bool
+	Conf 			[]byte
 }
 
 type PlayerCreateRoomRet struct {
-	ErrCode 	int
+	ErrCode 			int
+	RoomId 				uint32
 }
 
 type PlayerEnterRoom struct {
@@ -54,4 +64,8 @@ type PlayerGameMessageRet struct {
 type PlayerSubGameMessageRet struct {
 	Cmd 		uint32
 	Msg 		interface{}
+}
+
+type PlayerReturn2Lobby struct {
+
 }

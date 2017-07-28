@@ -36,3 +36,8 @@ const (
 	MallItemBuyTypeGold 	= 1
 	MallItemBuyTypeWechat	= 2
 )
+
+const (
+	DBSerivcePort 		= ":11345"
+	LbServicePort 		= ":11346"
+)
