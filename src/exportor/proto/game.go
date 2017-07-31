@@ -12,7 +12,6 @@ const (
 
 type PlayerLogin struct {
 	Uid 		uint32
-	Name 		string
 }
 
 type PlayerLoginRet struct {
@@ -33,22 +32,24 @@ type PlayerCreateRoom struct {
 type PlayerCreateRoomRet struct {
 	ErrCode 			int
 	RoomId 				uint32
+	ServerId 			int
 }
 
 type PlayerEnterRoom struct {
-	RoomId		uint32
+	RoomId				uint32
 }
 
 type PlayerEnterRoomRet struct {
-	ErrCode 	int
+	ErrCode 			int
+	ServerId 			int
 }
 
 type PlayerLeaveRoom struct {
-	RoomId 		uint32
+	RoomId 				uint32
 }
 
 type PlayerLeaveRoomRet struct {
-	ErrCode 	uint32
+	ErrCode 			uint32
 }
 
 type PlayerGameMessage struct {

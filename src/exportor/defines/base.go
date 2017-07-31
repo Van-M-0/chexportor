@@ -38,6 +38,7 @@ const (
 )
 
 const (
+	MSServicePort		= ":11344"
 	DBSerivcePort 		= ":11345"
 	LbServicePort 		= ":11346"
 )
