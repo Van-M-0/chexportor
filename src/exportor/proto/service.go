@@ -1,4 +1,4 @@
-package defines
+package proto
 
 import (
 	"time"
@@ -113,16 +113,6 @@ type NoticeOperatoin struct {
 	Notices 		[]*NoticeItem
 }
 
-type NoticeItem struct {
-	Id 			int
-	Kind 		string
-	Content 	string
-	StartTime 	time.Time
-	FinishTime 	time.Time
-	Counts 		int
-	PlayTime 	int
-}
-
 type UserLoadNotice struct {
 
 }
@@ -148,4 +138,12 @@ type MsLoadNoticeArg struct {
 
 type MsLoadNoticeReply struct {
 	Notices 		[]*NoticeItem
+}
+
+type MsLoadMallItemListArg struct {
+
+}
+
+type MsLoadMallItemListReply struct {
+	Malls 		[]*MallItem
 }

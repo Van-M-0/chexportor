@@ -59,7 +59,7 @@ type ICacheClient interface {
 	SetUserInfo(d interface{}, dbRet bool) error
 	SetUserCidUserId(uid uint32, userId int) error
 	GetUserCidUserId(uid uint32) int
-	UpdateUserInfo(uid uint32, prop string, value interface{}) bool
+	UpdateUserInfo(uid uint32, prop int, value interface{}) bool
 	SetServer(server *proto.CacheServer) error
 	GetServers() ([]*proto.CacheServer, error)
 	UpdateServer(server *proto.CacheServer) error

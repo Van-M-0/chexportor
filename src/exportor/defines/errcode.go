@@ -17,6 +17,8 @@ const (
 	ErrClientBuyItemNotExists	= 101
 	ErrClientBuyItemMoneyNotEnough = 102
 	ErrClientBuyItemTime 		= 103
+
+	ErrUserHornMessageUserErr 	= 101
 )
 
 // game

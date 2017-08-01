@@ -1,5 +1,6 @@
 package proto
 
+import "time"
 // lobby proto 1000 - 2000
 
 const (
@@ -13,12 +14,12 @@ const (
 	CmdLeaveRoom 		= 1007
 	CmdDestoyRooom 		= 1008
 
-	CmdClientLoadMallItem = 1008
+	CmdClientLoadMallList = 1008
 	CmdClientBuyItem 	= 1009
 
 	CmdUserLoadNotice	= 1010
-	CmdUserSendMessage	= 1011
-
+	CmdHornMessage		= 1011
+	CmdNoticeUpdate 	= 1012
 )
 
 type ClientLogin struct {
@@ -55,4 +56,75 @@ type WechatLoginReq struct {
 
 type WechatLoginRet struct {
 	Account 	string
+}
+
+//--------------------------------------------
+// notice
+//--------------------------------------------
+type NoticeItem struct {
+	Id 			int
+	Kind 		string		//'notice', 'horn'
+	Content 	string
+	StartTime 	time.Time
+	FinishTime 	time.Time
+	Counts 		int
+	PlayTime 	int
+}
+
+type LoadNoticeListReq struct {
+}
+
+type LoadNoticeListRet struct {
+	List 		[]NoticeItem
+}
+
+type NoticeUpdateItem struct {
+	Operation 		int		//1 add 2 update 3 delete
+	Item 			NoticeItem
+}
+
+type NoticeUpdate struct {
+	List 			[]NoticeUpdateItem
+}
+
+type UserHornMessageReq struct {
+	Uid 		uint32
+	Content 	string
+}
+
+type UserHornMessgaeRet struct {
+	ErrCode 	int
+	UserName 	string
+	Item 		NoticeItem
+}
+
+//--------------------------------------------
+// mall
+//--------------------------------------------
+type MallItem struct {
+	Id 			int
+	Name 		string
+	Category 	int
+	BuyValue 	int
+	Nums 		int
+	BuyLimt 	int
+
+	StartTime, FinishTime int
+}
+
+type ClientBuyReq struct {
+	ItemId 			int
+	BuyType			int
+}
+
+type ClientBuyMallItemRet struct {
+	ErrCode 		int
+}
+
+type ClientLoadMallList struct {
+
+}
+
+type ClientLoadMallListRet struct {
+	Items 		[]MallItem
 }

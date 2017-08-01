@@ -18,6 +18,7 @@ type CacheUser struct {
 	RoomCard 	int			`redis:"roomcard"`
 	Gold 		int64		`redis:"gold"`
 	RoomId 		int 		`redis:"roomid"`
+	Score 		int 		`redis:"score"`
 }
 
 type CacheServer struct {

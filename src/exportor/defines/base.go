@@ -42,3 +42,18 @@ const (
 	DBSerivcePort 		= ":11345"
 	LbServicePort 		= ":11346"
 )
+
+const (
+	PpDiamond			= 1		//钻石
+	PpRoomCard 			= 2		//房卡
+	PpGold				= 3		//金币
+	PpScore 			= 4		//积分
+	PpRoomId 			= 5
+	PpMax 				= 6
+)
+
+const (
+	MallItemCategoryDiamond = 1
+	MallItemCategoryGold 	= 2
+	MallItemCategoryRoomCard = 3
+)
