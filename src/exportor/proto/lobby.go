@@ -36,6 +36,10 @@ type ClientLoginRet struct {
 	Account 	string
 	Name 		string
 	UserId 		uint32
+	Diamond 	int
+	Gold 		int64
+	RoomCard 	int
+	Score 		int
 }
 
 type CreateAccount struct {

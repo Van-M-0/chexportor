@@ -51,6 +51,7 @@ type GameModule struct {
 	Creator 	GameCreateor
 	Releaser 	GameReleaser
 	GameData 	interface{}
+	GameConf	[]byte
 }
 
 type CommunicatorOption struct {

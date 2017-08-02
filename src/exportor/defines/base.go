@@ -57,3 +57,7 @@ const (
 	MallItemCategoryGold 	= 2
 	MallItemCategoryRoomCard = 3
 )
+
+const (
+	GameModuleXz 			= 1
+)

@@ -10,6 +10,7 @@ type PlayerInfo struct {
 	Diamond 	int
 	Gold 		int64
 	RoomCard 	int
+	Score 		int
 	Sex 		byte
 
 	RoomId 		uint32

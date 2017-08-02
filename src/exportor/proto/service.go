@@ -1,9 +1,5 @@
 package proto
 
-import (
-	"time"
-)
-
 //
 type DbUserLoginArg struct {
 	Acc 			string
@@ -79,8 +75,6 @@ type MsSelectGameServerReply struct {
 	ServerId 		int
 }
 
-
-
 // master room service
 type MsCreateoomIdArg struct {
 	ServerId 		int
@@ -105,6 +99,22 @@ type MsGetRoomServerIdArg struct {
 
 type MsGetRoomServerIdReply struct {
 	ServerId 		int
+}
+
+// master game moudle service
+type MsModuleItem struct {
+	Kind 			int
+	GameConf 		[]byte
+	GatewayHost 	string
+}
+
+type MsGameMoudleRegisterArg struct {
+	ServerId 		int
+	ModList 		[]MsModuleItem
+}
+
+type MsGameMoudleRegisterReply struct {
+	ErrCode 		string
 }
 
 // master notice service
