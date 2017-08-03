@@ -20,6 +20,8 @@ const (
 	CmdUserLoadNotice	= 1010
 	CmdHornMessage		= 1011
 	CmdNoticeUpdate 	= 1012
+
+	CmdUserLoadRank 	= 1013
 )
 
 type ClientLogin struct {
@@ -131,4 +133,24 @@ type ClientLoadMallList struct {
 
 type ClientLoadMallListRet struct {
 	Items 		[]MallItem
+}
+
+//--------------------------------------------
+// rank
+//--------------------------------------------
+type UserRankItem struct {
+	Rank 		int
+	Name 		string
+	UserId 		int
+	HeadImg 	string
+	Value 		int64
+}
+
+type ClientLoadUserRank struct {
+	RankType 	int
+}
+
+type ClientLoadUserRankRet struct {
+	RankType 	int
+	Users 		[]UserRankItem
 }

@@ -61,3 +61,7 @@ const (
 const (
 	GameModuleXz 			= 1
 )
+
+const (
+	RankTypeDiamond 		= 1
+)

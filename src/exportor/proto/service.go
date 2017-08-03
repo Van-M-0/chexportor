@@ -155,5 +155,15 @@ type MsLoadMallItemListArg struct {
 }
 
 type MsLoadMallItemListReply struct {
-	Malls 		[]*MallItem
+	Malls 			[]*MallItem
+}
+
+type MsLoadUserRankArg struct {
+	RankType 		int
+	Count 			int
+}
+
+type MsLoadUserRankReply struct {
+	ErrCode 	string
+	Users 		[]*UserRankItem
 }
