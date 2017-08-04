@@ -59,3 +59,10 @@ type CommunicatorOption struct {
 	ReadTimeout 	int
 	WriteTimeout	int
 }
+
+type StartConfigFile struct {
+	FrontHost 		string
+	BackendHost 	string
+	HttpHost 		string
+	GameModules 	[]int
+}

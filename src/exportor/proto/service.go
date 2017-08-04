@@ -11,7 +11,7 @@ type DbUserLoginReply struct {
 
 //
 type DbCreateAccountArg struct {
-	UserName		string
+	Acc			string
 }
 
 type DbCreateAccountReply struct {
