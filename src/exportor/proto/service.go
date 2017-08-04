@@ -7,6 +7,7 @@ type DbUserLoginArg struct {
 
 type DbUserLoginReply struct {
 	Err 			string
+	UserItemList 	[]UserItem
 }
 
 //
@@ -50,6 +51,13 @@ type MsServerIdReply struct {
 	Id 			int
 }
 
+type MsServerReleaseArg struct {
+	Id 			int
+}
+
+type MsServerReleaseReply struct {
+	ErrCode 	string
+}
 
 type MsServerDiscArg struct {
 	Id 			int
@@ -161,6 +169,15 @@ type MsLoadMallItemListReply struct {
 type MsLoadUserRankArg struct {
 	RankType 		int
 	Count 			int
+}
+
+type MsLoadItemConfigArg struct {
+
+}
+
+type MsLoadItemConfigReply struct {
+	ItemConfigList		[]ItemConfig
+	ItemAreaList		[]ItemArea
 }
 
 type MsLoadUserRankReply struct {

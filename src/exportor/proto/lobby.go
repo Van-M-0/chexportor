@@ -65,6 +65,15 @@ type WechatLoginRet struct {
 }
 
 //--------------------------------------------
+// user item
+//--------------------------------------------
+type UserItem struct {
+	ItemId 		uint32
+	Area		int
+	Count 		int
+}
+
+//--------------------------------------------
 // notice
 //--------------------------------------------
 type NoticeItem struct {
@@ -133,6 +142,25 @@ type ClientLoadMallList struct {
 
 type ClientLoadMallListRet struct {
 	Items 		[]MallItem
+}
+
+//--------------------------------------------
+// item config
+//--------------------------------------------
+type ItemConfig struct {
+	Itemid		uint32
+	Itemname 	string
+	Category 	int
+	Nums 		int
+	Sell 		int
+	Buyvalue 	int
+	Area	 	int
+	Description string
+}
+
+type ItemArea struct {
+	Area 		int
+	Gamelib 	int
 }
 
 //--------------------------------------------
