@@ -69,7 +69,6 @@ type WechatLoginRet struct {
 //--------------------------------------------
 type UserItem struct {
 	ItemId 		uint32
-	Area		int
 	Count 		int
 }
 
@@ -123,12 +122,12 @@ type MallItem struct {
 	BuyValue 	int
 	Nums 		int
 	BuyLimt 	int
-
 	StartTime, FinishTime int
 }
 
 type ClientBuyReq struct {
 	ItemId 			int
+	Kind 			int
 	BuyType			int
 }
 
@@ -154,7 +153,7 @@ type ItemConfig struct {
 	Nums 		int
 	Sell 		int
 	Buyvalue 	int
-	Area	 	int
+	GameKind 	int
 	Description string
 }
 

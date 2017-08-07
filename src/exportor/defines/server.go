@@ -64,6 +64,8 @@ type ICacheClient interface {
 	GetServers() ([]*proto.CacheServer, error)
 	UpdateServer(server *proto.CacheServer) error
 	NoticeOperation(notice *[]*proto.CacheNotice, op string) error
+	UpdateUserItems(userid uint32, items []proto.UserItem) error
+	GetUserItems(userid uint32) ([]proto.UserItem, error)
 	FlushAll()
 }
 

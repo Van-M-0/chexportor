@@ -177,10 +177,26 @@ type MsLoadItemConfigArg struct {
 
 type MsLoadItemConfigReply struct {
 	ItemConfigList		[]ItemConfig
-	ItemAreaList		[]ItemArea
 }
 
 type MsLoadUserRankReply struct {
 	ErrCode 	string
 	Users 		[]*UserRankItem
+}
+
+type MsLoadGameLibsArg struct {
+
+}
+
+type GameLibItem struct {
+	Id 			int
+	Name 		string
+	Area 		string
+	City 		string
+	Province 	string
+}
+
+type MsLoadGameLibsReply struct {
+	ErrCode 	string
+	Libs 		[]GameLibItem
 }
