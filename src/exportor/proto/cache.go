@@ -36,3 +36,8 @@ type CacheNotice struct {
 	PlayTime 		int			`redis:"playtime,omitempty"`
 	PlayCount 		int			`redis:"playcount,omitempty"`
 }
+
+type CacheUserItem struct {
+	Id 				int 		`redis:"id,omitempty"`
+	Count 			int 		`redis:"count,omitempty"`
+}

@@ -1,5 +1,9 @@
 package defines
 
+import (
+	"exportor/proto"
+)
+
 type PlayerInfo struct {
 	Uid 		uint32
 	UserId 		uint32
@@ -14,6 +18,8 @@ type PlayerInfo struct {
 	Sex 		byte
 
 	RoomId 		uint32
+
+	Items 		[]proto.UserItem
 }
 
 type CreateRoomConf struct {
