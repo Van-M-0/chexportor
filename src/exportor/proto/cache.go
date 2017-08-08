@@ -38,6 +38,7 @@ type CacheNotice struct {
 }
 
 type CacheUserItem struct {
+	UserId 			int 		`redis:"userid,omitempty"`
 	Id 				int 		`redis:"id,omitempty"`
 	Count 			int 		`redis:"count,omitempty"`
 }

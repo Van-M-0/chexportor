@@ -67,6 +67,9 @@ type ICacheClient interface {
 	UpdateUserItems(userid uint32, items []proto.UserItem) error
 	GetUserItems(userid uint32) ([]proto.UserItem, error)
 	FlushAll()
+
+	GetAllUsers() ([]*proto.CacheUser, error)
+	GetAllUserItem() ([]*proto.CacheUserItem, error)
 }
 
 type ICacheLoader interface {
