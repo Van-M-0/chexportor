@@ -86,6 +86,7 @@ type MsSelectGameServerReply struct {
 // master room service
 type MsCreateoomIdArg struct {
 	ServerId 		int
+	Conf 			[]byte
 }
 
 type MsCreateRoomIdReply struct {
@@ -107,6 +108,7 @@ type MsGetRoomServerIdArg struct {
 
 type MsGetRoomServerIdReply struct {
 	ServerId 		int
+	Conf 			[]byte
 }
 
 // master game moudle service

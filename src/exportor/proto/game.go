@@ -33,9 +33,11 @@ type PlayerCreateRoomRet struct {
 	ErrCode 			int
 	RoomId 				uint32
 	ServerId 			int
+	Conf 				[]byte
 }
 
 type PlayerEnterRoom struct {
+	ServerId 			uint32
 	RoomId				uint32
 }
 

@@ -41,6 +41,7 @@ const (
 	ErrEnterRoomNotExists 		= 103
 	ErrEnterRoomMoudle			= 104
 	ErrEnterRoomNotSame 		= 105
+	ErrEnterRoomQueryConf 		= 106
 
 	ErrLeaveRoomSuccess			= 101
 	ErrLeaveRoomUserNotIn		= 102
