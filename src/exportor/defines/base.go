@@ -49,7 +49,8 @@ const (
 	PpGold				= 3		//金币
 	PpScore 			= 4		//积分
 	PpRoomId 			= 5
-	PpMax 				= 6
+	PpItem 				= 6
+	PpMax 				= 7
 )
 
 const (
@@ -64,4 +65,10 @@ const (
 
 const (
 	RankTypeDiamond 		= 1
+)
+
+const (
+	LoginTypeWechat 		= 1
+	LoginTypeGameAccount 	= 2
+	LoginTypeGuest			= 3
 )

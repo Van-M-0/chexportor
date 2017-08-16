@@ -22,10 +22,19 @@ const (
 	CmdNoticeUpdate 	= 1012
 
 	CmdUserLoadRank 	= 1013
+
+	CmdUserGetRecordList = 1015
+	CmdUserGetRecord 	= 1016
+
+	CmdUserLoadActivityList = 1020
 )
 
 type ClientLogin struct {
+	LoginType 	int
 	Account 	string
+	Name 		string
+	Sex 		int
+	Headimg 	string
 }
 
 type GuestLogin struct {
@@ -61,7 +70,10 @@ type WechatLoginReq struct {
 }
 
 type WechatLoginRet struct {
-	Account 	string
+	ErrCode 	string
+	Code 		string
+	OpenId 		string
+	Token		string
 }
 
 //--------------------------------------------
@@ -180,4 +192,63 @@ type ClientLoadUserRank struct {
 type ClientLoadUserRankRet struct {
 	RankType 	int
 	Users 		[]UserRankItem
+}
+
+//--------------------------------------------
+// record
+//--------------------------------------------
+type RecordItem struct {
+	RecordId 		int
+	RecordData 		[]byte
+}
+
+type ClientGetRecordList struct {
+
+}
+
+type ClientGetRecordListRet struct {
+	ErrCode 		int
+	Records 		[]RecordItem
+}
+
+type ClientGetRecord struct {
+	RecordId 		int
+}
+
+type ClientGetRecordRet struct {
+	ErrCode 		int
+	Content 		[]byte
+}
+
+//--------------------------------------------
+// quest
+//--------------------------------------------
+type ClientProcessQuest struct {
+	Id 				int
+}
+
+type ClientProcessQuestRet struct {
+	Id 				int
+	CurCount 		int
+}
+
+type ClientCompleteQuest struct {
+	Id 				int
+}
+
+type ClientCompleteQuestRet struct {
+	Id 				int
+	RewardId 		int
+}
+
+//--------------------------------------------
+// activity
+//--------------------------------------------
+type ClientLoadActitity struct {
+
+}
+
+type ClientLoadActitityRet struct {
+	Activities 		[]*ActivityItem
+	Rewards 		[]*ActivityRewardItem
 }

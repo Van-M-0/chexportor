@@ -65,11 +65,16 @@ type ICacheClient interface {
 	UpdateServer(server *proto.CacheServer) error
 	NoticeOperation(notice *[]*proto.CacheNotice, op string) error
 	UpdateUserItems(userid uint32, items []proto.UserItem) error
-	GetUserItems(userid uint32) ([]proto.UserItem, error)
+	GetUserItems(userid uint32) ([]*proto.UserItem, error)
 	FlushAll()
 
 	GetAllUsers() ([]*proto.CacheUser, error)
 	GetAllUserItem() ([]*proto.CacheUserItem, error)
+
+	SaveGameRecord(head, content []byte) int
+	SaveUserRecord(userId, recordId int) error
+	GetGameRecordHead(userId int) (map[int][]byte, error)
+	GetGameRecordContent(id int) ([]byte, error)
 }
 
 type ICacheLoader interface {

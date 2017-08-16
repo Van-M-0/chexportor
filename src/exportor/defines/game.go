@@ -19,7 +19,7 @@ type PlayerInfo struct {
 
 	RoomId 		uint32
 
-	Items 		[]proto.UserItem
+	Items 		[]*proto.UserItem
 }
 
 type CreateRoomConf struct {
@@ -34,6 +34,8 @@ type IGameManager interface {
 	BroadcastMessage(infos []*PlayerInfo, cmd uint32, data interface{})
 	SetTimer(id uint32, data interface{}) error
 	KillTimer(id uint32) error
+	SaveGameRecord(head, data []byte) int
+	SaveUserRecord(userid, id int) error
 }
 
 type IGame interface {

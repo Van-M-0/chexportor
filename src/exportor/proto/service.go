@@ -1,8 +1,14 @@
 package proto
 
+import "time"
+
 //
 type DbUserLoginArg struct {
+	LoginType 		int
 	Acc 			string
+	Name 			string
+	Headimg 		string
+	Sex 			int
 }
 
 type DbUserLoginReply struct {
@@ -111,6 +117,18 @@ type MsGetRoomServerIdReply struct {
 	Conf 			[]byte
 }
 
+// master skd service
+type MsSdkWechatLoginArg struct {
+	Code 			string
+	Device			string
+}
+
+type MsSdkWechatLoginReply struct {
+	ErrCode 		string
+	OpenId 			string
+	Token 			string
+}
+
 // master game moudle service
 type MsModuleItem struct {
 	Kind 			int
@@ -201,4 +219,30 @@ type GameLibItem struct {
 type MsLoadGameLibsReply struct {
 	ErrCode 	string
 	Libs 		[]GameLibItem
+}
+
+type MsLoadActivitysArg struct {
+
+}
+
+type ActivityItem struct {
+	Id 			int
+	Desc 		string
+	Actype 		string
+	Starttime 	time.Time
+	Finishtime 	time.Time
+	Rewardids 	string
+}
+
+type ActivityRewardItem struct {
+	Id 			int
+	RewardType 	string
+	ItemId 		int
+	Num 		int
+}
+
+type MsLoadActivitysReply struct {
+	ErrCode 			string
+	Activitys 			[]*ActivityItem
+	ActivityRewards 	[]*ActivityRewardItem
 }

@@ -44,6 +44,7 @@ type PlayerEnterRoom struct {
 type PlayerEnterRoomRet struct {
 	ErrCode 			int
 	ServerId 			int
+	Conf 				[]byte
 }
 
 type PlayerLeaveRoom struct {
