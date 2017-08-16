@@ -27,6 +27,11 @@ const (
 	CmdUserGetRecord 	= 1016
 
 	CmdUserLoadActivityList = 1020
+
+	CmdUserLoadQuest 	= 1030
+	CmdUserProcessQuest = 1031
+
+	CmdUserIdentify 	= 1040
 )
 
 type ClientLogin struct {
@@ -223,11 +228,44 @@ type ClientGetRecordRet struct {
 //--------------------------------------------
 // quest
 //--------------------------------------------
+type QuestItem struct {
+	Id 			int
+	Title 		string
+	Content 	string
+	Type 		string
+	MaxCount 	int
+	RewardIds 	string
+}
+
+type QuestData struct {
+	Id 			int
+	CurCount 	int
+	TolCount 	int
+}
+
+type QuestRewardItem struct {
+	Id 			int
+	ItemId 		int
+	Num 		int
+}
+
+type ClientLoadQuest struct {
+
+}
+
+type ClientLoadQuestRet struct {
+	ErrCode 		int
+	Process 		[]*QuestData
+}
+
 type ClientProcessQuest struct {
+	ErrCode 		int
 	Id 				int
+	CurCount 		int
 }
 
 type ClientProcessQuestRet struct {
+	ErrCode 		int
 	Id 				int
 	CurCount 		int
 }
@@ -237,6 +275,7 @@ type ClientCompleteQuest struct {
 }
 
 type ClientCompleteQuestRet struct {
+	ErrCode 		int
 	Id 				int
 	RewardId 		int
 }
@@ -251,4 +290,15 @@ type ClientLoadActitity struct {
 type ClientLoadActitityRet struct {
 	Activities 		[]*ActivityItem
 	Rewards 		[]*ActivityRewardItem
+}
+
+//--------------------------------------------
+// identify
+//--------------------------------------------
+type ClientIdentify struct {
+	Id 				string
+}
+
+type ClientIdentifyRet struct {
+	ErrCode 		int
 }

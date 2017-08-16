@@ -6,6 +6,7 @@ const (
 	ErrCommonCache 				= 2
 	ErrCommonWait				= 3
 	ErrCoomonSystem 			= 4
+	ErrComononUserNotIn			= 5
 
 	ErrClientLoginWait 	  		= 100
 	ErrClientLoginNeedCreate	= 1001
@@ -19,6 +20,11 @@ const (
 	ErrClientBuyItemTime 		= 103
 
 	ErrUserHornMessageUserErr 	= 101
+
+
+	ErrQuestProcessNotHave		= 101
+	ErrQuestProcessMustWait		= 102
+	ErrQuestProcessFinished 	= 103
 )
 
 // game

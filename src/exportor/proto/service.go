@@ -11,9 +11,15 @@ type DbUserLoginArg struct {
 	Sex 			int
 }
 
+type UserData struct {
+	Activity 		[]byte
+	Quest 			[]byte
+}
+
 type DbUserLoginReply struct {
 	Err 			string
 	UserItemList 	[]UserItem
+	Ud 				[]byte
 }
 
 //
@@ -245,4 +251,14 @@ type MsLoadActivitysReply struct {
 	ErrCode 			string
 	Activitys 			[]*ActivityItem
 	ActivityRewards 	[]*ActivityRewardItem
+}
+
+type MsLoadQuestArg struct {
+
+}
+
+type MsLoadQuestReply struct {
+	ErrCode 			string
+	Quests 				[]QuestItem
+	Rewards 			[]QuestRewardItem
 }
