@@ -30,8 +30,11 @@ const (
 
 	CmdUserLoadQuest 	= 1030
 	CmdUserProcessQuest = 1031
+	CmdUserCompleteQuest = 1032
 
 	CmdUserIdentify 	= 1040
+
+	CmdSystemSyncItem 	= 1200
 )
 
 type ClientLogin struct {
@@ -48,14 +51,16 @@ type GuestLogin struct {
 
 type ClientLoginRet struct {
 	ErrCode 	int
-	Uid 		uint32
-	Account 	string
+	Uid 		uint32		//动态id
+	UserId 		uint32		//用户id
+	Account 	string		//用户账号，或者openid
+	Sex 		uint8
 	Name 		string
-	UserId 		uint32
+	HeadImg 	string
 	Diamond 	int
 	Gold 		int64
-	RoomCard 	int
 	Score 		int
+	RoomId 		int
 }
 
 type CreateAccount struct {
@@ -87,6 +92,10 @@ type WechatLoginRet struct {
 type UserItem struct {
 	ItemId 		uint32
 	Count 		int
+}
+
+type SystemSyncItems struct {
+	Items 		[]*UserItem
 }
 
 //--------------------------------------------
@@ -241,6 +250,7 @@ type QuestData struct {
 	Id 			int
 	CurCount 	int
 	TolCount 	int
+	Status 		int 	// 1 正在进行  2 已完成  3 已领取
 }
 
 type QuestRewardItem struct {
@@ -259,7 +269,6 @@ type ClientLoadQuestRet struct {
 }
 
 type ClientProcessQuest struct {
-	ErrCode 		int
 	Id 				int
 	CurCount 		int
 }
@@ -268,6 +277,7 @@ type ClientProcessQuestRet struct {
 	ErrCode 		int
 	Id 				int
 	CurCount 		int
+	Status 			int		// 1 正在进行  2 已完成  3 已领取
 }
 
 type ClientCompleteQuest struct {
@@ -277,7 +287,7 @@ type ClientCompleteQuest struct {
 type ClientCompleteQuestRet struct {
 	ErrCode 		int
 	Id 				int
-	RewardId 		int
+	RewardId 		string
 }
 
 //--------------------------------------------
@@ -297,6 +307,8 @@ type ClientLoadActitityRet struct {
 //--------------------------------------------
 type ClientIdentify struct {
 	Id 				string
+	Phone 			string
+	Name 			string
 }
 
 type ClientIdentifyRet struct {

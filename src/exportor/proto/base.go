@@ -2,6 +2,7 @@ package proto
 
 const (
 	CmdBaseUpsePropUpdate = 100
+	CmdBaseSynceLoginItems = 101
 )
 
 type UserProp struct {

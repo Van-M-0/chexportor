@@ -25,6 +25,8 @@ const (
 	ErrQuestProcessNotHave		= 101
 	ErrQuestProcessMustWait		= 102
 	ErrQuestProcessFinished 	= 103
+	ErrQuestPorcessNotFinish 	= 104
+	ErrQuestProcessCompletioned = 105
 )
 
 // game
