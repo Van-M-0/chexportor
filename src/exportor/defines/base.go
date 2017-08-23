@@ -37,7 +37,8 @@ const (
 	MallItemBuyTypeWechat	= 2
 )
 
-const (
+var (
+	WDServicePort		= "predefined"
 	MSServicePort		= ":11344"
 	DBSerivcePort 		= ":11345"
 	LbServicePort 		= ":11346"
@@ -54,9 +55,9 @@ const (
 )
 
 const (
-	MallItemCategoryDiamond = 1
-	MallItemCategoryGold 	= 2
-	MallItemCategoryRoomCard = 3
+	MallItemCategoryGold 	= 1
+	MallItemCategoryDiamond = 2
+	MallItemCategoryItem = 3
 )
 
 const (

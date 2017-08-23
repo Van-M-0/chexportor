@@ -7,9 +7,11 @@ const (
 	ErrCommonWait				= 3
 	ErrCoomonSystem 			= 4
 	ErrComononUserNotIn			= 5
+	ErrCommonInvalidReq 		= 6
 
 	ErrClientLoginWait 	  		= 100
 	ErrClientLoginNeedCreate	= 1001
+	ErrClientLoginRelogin 		= 103
 
 	ErrCreateAccountErr			= 100
 	ErrCreateAccountWait 		= 101
@@ -18,6 +20,7 @@ const (
 	ErrClientBuyItemNotExists	= 101
 	ErrClientBuyItemMoneyNotEnough = 102
 	ErrClientBuyItemTime 		= 103
+	ErrClientBuyInvalid			= 104
 
 	ErrUserHornMessageUserErr 	= 101
 
@@ -27,6 +30,8 @@ const (
 	ErrQuestProcessFinished 	= 103
 	ErrQuestPorcessNotFinish 	= 104
 	ErrQuestProcessCompletioned = 105
+
+	ErrReleaseRoomNotExists 	= 101
 )
 
 // game

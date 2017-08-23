@@ -3,6 +3,7 @@ package proto
 const (
 	CmdBaseUpsePropUpdate = 100
 	CmdBaseSynceLoginItems = 101
+	CmdBaseSynceIdentifyInfo = 102
 )
 
 type UserProp struct {
@@ -19,4 +20,10 @@ type ItemProp struct {
 type SyncUserProps struct {
 	Props 		UserProp
 	Items 		ItemProp
+}
+
+type SynceIdentifyInfo struct {
+	Name 		string
+	Phone 		string
+	Card 		string
 }

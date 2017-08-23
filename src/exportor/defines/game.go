@@ -45,6 +45,7 @@ type IGame interface {
 	OnUserEnter(info *PlayerInfo) error
 	OnUserLeave(info *PlayerInfo)
 	OnUserOffline(info *PlayerInfo)
+	OnUserReEnter(info *PlayerInfo)
 	OnUserMessage(info *PlayerInfo, cmd uint32, data []byte) error
 	OnTimer(id uint32, data interface{})
 }

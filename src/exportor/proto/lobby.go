@@ -21,20 +21,21 @@ const (
 	CmdHornMessage		= 1011
 	CmdNoticeUpdate 	= 1012
 
-	CmdUserLoadRank 	= 1013
+	CmdUserLoadRank 		= 1013
 
-	CmdUserGetRecordList = 1015
-	CmdUserGetRecord 	= 1016
+	CmdUserGetRecordList 	= 1015
+	CmdUserGetRecord 		= 1016
 
 	CmdUserLoadActivityList = 1020
 
-	CmdUserLoadQuest 	= 1030
-	CmdUserProcessQuest = 1031
-	CmdUserCompleteQuest = 1032
+	CmdUserLoadQuest 		= 1030
+	CmdUserProcessQuest 	= 1031
+	CmdUserCompleteQuest	= 1032
 
-	CmdUserIdentify 	= 1040
+	CmdUserIdentify 		= 1040
+	CmdUserLoadIdentify 	= 1041
 
-	CmdSystemSyncItem 	= 1200
+	CmdSystemSyncItem 		= 1200
 )
 
 type ClientLogin struct {
@@ -152,13 +153,13 @@ type MallItem struct {
 }
 
 type ClientBuyReq struct {
-	ItemId 			int
-	Kind 			int
-	BuyType			int
+	Item 			int	// 购买的物品
+	BuyType			int	// 购买类型
 }
 
 type ClientBuyMallItemRet struct {
 	ErrCode 		int
+	Item 			int	// 购买的物品
 }
 
 type ClientLoadMallList struct {
@@ -300,6 +301,7 @@ type ClientLoadActitity struct {
 type ClientLoadActitityRet struct {
 	Activities 		[]*ActivityItem
 	Rewards 		[]*ActivityRewardItem
+	OpenIds 		[]int
 }
 
 //--------------------------------------------
@@ -313,4 +315,12 @@ type ClientIdentify struct {
 
 type ClientIdentifyRet struct {
 	ErrCode 		int
+}
+
+type ClientLoadIdentify struct {
+
+}
+
+type ClientLoadIdentifyRet struct {
+
 }

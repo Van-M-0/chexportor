@@ -20,6 +20,7 @@ type DbUserLoginReply struct {
 	Err 			string
 	UserItemList 	[]UserItem
 	Ud 				[]byte
+	Identify 		SynceIdentifyInfo
 }
 
 //
@@ -261,4 +262,42 @@ type MsLoadQuestReply struct {
 	ErrCode 			string
 	Quests 				[]QuestItem
 	Rewards 			[]QuestRewardItem
+}
+
+
+// user data
+type MsSaveUserDataArg struct {
+	UserId 				uint32
+	UserData 			[]byte
+}
+
+type MsSaveUserDataReply struct {
+	ErrCode 			string
+}
+
+type MsSaveIdentifyInfoArg struct {
+	Userid 				uint32
+	Phone 				string
+	Name 				string
+	Idcard 				string
+}
+
+type MsSaveIdentifyInfoReply struct {
+	ErrCode 			string
+}
+
+// world service
+
+type ModuleInfo struct {
+	Province 		string
+	City 			string
+	Name 			string
+	Kind 			int
+	Conf 			interface{}
+	GateIp 			string
+}
+
+type GameModule struct {
+	ModuleConf 		interface{}
+	GatewayHost 	string
 }

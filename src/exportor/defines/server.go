@@ -59,12 +59,14 @@ type ICacheClient interface {
 	SetUserInfo(d interface{}, dbRet bool) error
 	SetUserCidUserId(uid uint32, userId int) error
 	GetUserCidUserId(uid uint32) int
+	DelUserCidUserId(uid uint32)
 	UpdateUserInfo(uid uint32, prop int, value interface{}) bool
 	SetServer(server *proto.CacheServer) error
 	GetServers() ([]*proto.CacheServer, error)
 	UpdateServer(server *proto.CacheServer) error
 	NoticeOperation(notice *[]*proto.CacheNotice, op string) error
 	UpdateUserItems(userid uint32, items []proto.UserItem) error
+	UpdateSingleItem(userid uint32, flag int, id uint32, count int) error
 	GetUserItems(userid uint32) ([]*proto.UserItem, error)
 	FlushAll()
 	Scripts(args ...interface{})

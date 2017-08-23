@@ -7,8 +7,15 @@ const (
 	CmdGameEnterRoom			= 5003
 	CmdGamePlayerLeaveRoom		= 5004
 	CmdGamePlayerReturn2lobby	= 5005
+	CmdGamePlayerReleaseRoom 	= 5006
+	CmdGamePlayerReleaseRoomResponse = 5007
+	CmdGamePlayerRoomChat 		= 5010
 	CmdGamePlayerMessage 		= 5020
 )
+
+type PlayerGameCommonError struct {
+	ErrCode 		int
+}
 
 type PlayerLogin struct {
 	Uid 		uint32
@@ -73,3 +80,33 @@ type PlayerSubGameMessageRet struct {
 type PlayerReturn2Lobby struct {
 
 }
+
+type PlayerRoomChat struct {
+	Content 		string
+}
+
+type PlayerRoomChatRet struct {
+	ErrCode 		int
+	Userid 			uint32
+	Content 		string
+}
+
+type PlayerGameReleaseRoom struct {
+}
+
+type PlayerGameReleaseRoomRet struct {
+	ErrCode 		int
+	Sponser	 		string
+}
+
+type PlayerGameReleaseRoomResponse struct {
+	Agree 			bool
+}
+
+type PlayerGameReleaseRoomResponseRet struct {
+	ErrCode 		int
+	Released 		bool
+	Agree 			bool
+	Voter			string
+}
+

@@ -52,6 +52,7 @@ type GameModule struct {
 	Releaser 	GameReleaser
 	GameData 	interface{}
 	GameConf	[]byte
+	PlayerCount int
 }
 
 type CommunicatorOption struct {
@@ -65,4 +66,6 @@ type StartConfigFile struct {
 	BackendHost 	string
 	HttpHost 		string
 	GameModules 	[]int
+	LocalHost		string
+	WorldHost 		string
 }
