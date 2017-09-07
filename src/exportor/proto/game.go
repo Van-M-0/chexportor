@@ -13,6 +13,7 @@ const (
 	CmdGamePlayerMessage 		= 5020
 )
 
+
 type PlayerGameCommonError struct {
 	ErrCode 		int
 }
@@ -78,7 +79,7 @@ type PlayerSubGameMessageRet struct {
 }
 
 type PlayerReturn2Lobby struct {
-
+	ErrCode 	int
 }
 
 type PlayerRoomChat struct {
@@ -96,7 +97,8 @@ type PlayerGameReleaseRoom struct {
 
 type PlayerGameReleaseRoomRet struct {
 	ErrCode 		int
-	Sponser	 		string
+	Sponser	 		uint32
+	Released 		bool
 }
 
 type PlayerGameReleaseRoomResponse struct {
@@ -107,6 +109,5 @@ type PlayerGameReleaseRoomResponseRet struct {
 	ErrCode 		int
 	Released 		bool
 	Agree 			bool
-	Voter			string
+	Voter			uint32
 }
-

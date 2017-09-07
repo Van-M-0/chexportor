@@ -73,3 +73,8 @@ const (
 	LoginTypeGameAccount 	= 2
 	LoginTypeGuest			= 3
 )
+
+const (
+	ClientPatFMaxSize		= 512
+	ClientPktBMaxSize		= 1024*1024
+)

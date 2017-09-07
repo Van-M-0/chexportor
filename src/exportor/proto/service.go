@@ -275,6 +275,7 @@ type MsSaveUserDataReply struct {
 	ErrCode 			string
 }
 
+// identify info
 type MsSaveIdentifyInfoArg struct {
 	Userid 				uint32
 	Phone 				string
@@ -286,6 +287,42 @@ type MsSaveIdentifyInfoReply struct {
 	ErrCode 			string
 }
 
+// club info
+type MsLoadClubInfoReq struct {
+
+}
+
+type ClubItem struct {
+	Id  		int
+	CreatorId 	uint32
+	CreatorName string
+}
+
+type ClubMemberItem struct {
+	UserId 		uint32
+	ClubId 		int
+}
+
+type MsLoadClubInfoReply struct {
+	ErrCode 		string
+	Clubs 			[]*ClubItem
+	ClubMembers 	[]*ClubMemberItem
+}
+
+type MsClubOperationReq struct {
+	Op 				string
+	Club 			ClubItem
+	UserId 			uint32
+}
+
+type MsClubOperationReply struct {
+	ErrCode 		string
+	Op 				string
+	Club 			ClubItem
+	UserId 			uint32
+}
+
+
 // world service
 
 type ModuleInfo struct {
@@ -293,7 +330,7 @@ type ModuleInfo struct {
 	City 			string
 	Name 			string
 	Kind 			int
-	Conf 			interface{}
+	Conf 			[]byte
 	GateIp 			string
 }
 

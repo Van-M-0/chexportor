@@ -35,8 +35,26 @@ const (
 	CmdUserIdentify 		= 1040
 	CmdUserLoadIdentify 	= 1041
 
+	CmdUserCreatClub 		= 1050
+	CmdUserJoinClub 		= 1051
+	CmdUserLeaveClub		= 1052
+
 	CmdSystemSyncItem 		= 1200
+
+	CmdLobbyPerformance		= 1999
 )
+
+type LobbyPerformance struct {
+	T 				time.Time
+	SubCmd 			int
+}
+
+type LobbyPerformanceRet struct {
+	SubCmd 			int
+	T1				time.Time
+	T2				time.Time
+	T3 				time.Time
+}
 
 type ClientLogin struct {
 	LoginType 	int
@@ -323,4 +341,31 @@ type ClientLoadIdentify struct {
 
 type ClientLoadIdentifyRet struct {
 
+}
+
+//--------------------------------------------
+// club
+//--------------------------------------------
+type ClientCreateClub struct {
+
+}
+
+type ClientCreateClubRet struct {
+	ErrCode 		int
+}
+
+type ClientJoinClub struct {
+	ClubId 			int
+}
+
+type ClientJoinClubRet struct {
+	ErrCode 		int
+}
+
+type ClientLeaveClub struct {
+	ClubId 			int
+}
+
+type ClientLeaveClubRet struct {
+	ErrCode 		int
 }

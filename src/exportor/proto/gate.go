@@ -38,6 +38,7 @@ type LobbyGateHeader struct {
 type GameGateHeader struct {
 	Uids 		[]uint32
 	Cmd 		uint32
+	Index 		uint32
 	Msg 		[]byte
 }
 

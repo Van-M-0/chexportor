@@ -7,17 +7,21 @@ import (
 type CodecCreator func() ICodec
 type NetClientOption struct {
 	Host       	string
-	SendChSize 	int
 	ConnectCb  	ClientConnectCb
 	CloseCb    	ClientCloseCb
 	MsgCb      	ClientMessageCb
 	AuthCb     	AuthCb
+	SendChSize 	int
+	SendActor 	int
 }
 
 type NetServerOption struct {
 	GwHost		string
 	CmHost 		string
 	Host 		string
+	SendChSize 	int
+	SendActor 	int
+	RecvNum		int
 
 	MaxRecvSize int
 	EncryptCode string
@@ -40,6 +44,7 @@ type LobbyOption struct {
 }
 
 type GameOption struct {
+	ClientHost 	string
 	GwHost 		string
 	Moudles 	[]GameModule
 }
@@ -67,5 +72,6 @@ type StartConfigFile struct {
 	HttpHost 		string
 	GameModules 	[]int
 	LocalHost		string
+	WorldHttp 		string
 	WorldHost 		string
 }

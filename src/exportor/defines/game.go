@@ -36,6 +36,7 @@ type IGameManager interface {
 	KillTimer(id uint32) error
 	SaveGameRecord(head, data []byte) int
 	SaveUserRecord(userid, id int) error
+	UpdateUserInfo(info *PlayerInfo, data *proto.GameUserPpUpdate) bool
 }
 
 type IGame interface {
@@ -48,4 +49,5 @@ type IGame interface {
 	OnUserReEnter(info *PlayerInfo)
 	OnUserMessage(info *PlayerInfo, cmd uint32, data []byte) error
 	OnTimer(id uint32, data interface{})
+	GetPlayerCount() int
 }

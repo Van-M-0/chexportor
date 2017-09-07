@@ -31,7 +31,21 @@ const (
 	ErrQuestPorcessNotFinish 	= 104
 	ErrQuestProcessCompletioned = 105
 
+	ErrClubCreateHaveClub 		= 101
+	ErrClubCreateTryAgain		= 102
+	ErrClubCreateWait 			= 103
+
+	ErrClubJoinNotExists		= 101
+	ErrClubJoinHaveClub			= 102
+
+	ErrClubLeaveNotExists 		= 101
+	ErrClubLeaveNotAllow		= 102
+	ErrClubLeaveMoneyNotEnough  = 103
+	ErrClubLeaveError			= 104
+	ErrClubLeaveNotJoind 		= 105
+
 	ErrReleaseRoomNotExists 	= 101
+	ErrReleaseRoomIng 			= 102
 )
 
 // game
