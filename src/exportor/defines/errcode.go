@@ -21,6 +21,7 @@ const (
 	ErrClientBuyItemMoneyNotEnough = 102
 	ErrClientBuyItemTime 		= 103
 	ErrClientBuyInvalid			= 104
+	ErrClientBuyConsumeErr 		= 105
 
 	ErrUserHornMessageUserErr 	= 101
 
@@ -34,6 +35,7 @@ const (
 	ErrClubCreateHaveClub 		= 101
 	ErrClubCreateTryAgain		= 102
 	ErrClubCreateWait 			= 103
+	ErrClubNotAgent 			= 104
 
 	ErrClubJoinNotExists		= 101
 	ErrClubJoinHaveClub			= 102

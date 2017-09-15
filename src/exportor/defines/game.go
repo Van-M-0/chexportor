@@ -37,6 +37,9 @@ type IGameManager interface {
 	SaveGameRecord(head, data []byte) int
 	SaveUserRecord(userid, id int) error
 	UpdateUserInfo(info *PlayerInfo, data *proto.GameUserPpUpdate) bool
+	InfoLog(args ...interface{})
+	DebugLog(args ...interface{})
+	ErrLog(args ...interface{})
 }
 
 type IGame interface {

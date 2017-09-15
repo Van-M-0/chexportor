@@ -121,6 +121,7 @@ type MsGetRoomServerIdArg struct {
 
 type MsGetRoomServerIdReply struct {
 	ServerId 		int
+	Alive 			bool
 	Conf 			[]byte
 }
 
@@ -326,6 +327,7 @@ type MsClubOperationReply struct {
 // world service
 
 type ModuleInfo struct {
+	Id 				int
 	Province 		string
 	City 			string
 	Name 			string

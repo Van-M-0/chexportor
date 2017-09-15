@@ -39,7 +39,10 @@ const (
 	CmdUserJoinClub 		= 1051
 	CmdUserLeaveClub		= 1052
 
+
 	CmdSystemSyncItem 		= 1200
+
+	CmdClearPlayerInfo 		= 1210
 
 	CmdLobbyPerformance		= 1999
 )
@@ -368,4 +371,11 @@ type ClientLeaveClub struct {
 
 type ClientLeaveClubRet struct {
 	ErrCode 		int
+}
+
+//--------------------------------------------
+// ClearInfo
+//--------------------------------------------
+type ClearUserInfo struct {
+	Type 			int
 }

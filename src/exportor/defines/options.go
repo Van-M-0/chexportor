@@ -33,6 +33,7 @@ type NetServerOption struct {
 }
 
 type GatewayOption struct {
+	ClientHost 	string
 	FrontHost 	string
 	MaxClient   int
 
@@ -47,6 +48,18 @@ type GameOption struct {
 	ClientHost 	string
 	GwHost 		string
 	Moudles 	[]GameModule
+}
+
+type DbProxyOption struct {
+	Name 		string
+	User 		string
+	Pwd 		string
+}
+
+type WorldOptoin struct {
+	Name 		string
+	User 		string
+	Pwd 		string
 }
 
 type GameCreateor func() IGame
@@ -67,6 +80,7 @@ type CommunicatorOption struct {
 }
 
 type StartConfigFile struct {
+	ClientHost 		string
 	FrontHost 		string
 	BackendHost 	string
 	HttpHost 		string
@@ -74,4 +88,7 @@ type StartConfigFile struct {
 	LocalHost		string
 	WorldHttp 		string
 	WorldHost 		string
+	DbName 			string
+	DbUser 			string
+	DbPwd 			string
 }
