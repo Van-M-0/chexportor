@@ -39,6 +39,8 @@ const (
 	CmdUserJoinClub 		= 1051
 	CmdUserLeaveClub		= 1052
 
+	CmdUserPreayInfo 		= 1055
+
 
 	CmdSystemSyncItem 		= 1200
 
@@ -175,6 +177,7 @@ type MallItem struct {
 
 type ClientBuyReq struct {
 	Item 			int	// 购买的物品
+	Num 			int //购买的数量
 	BuyType			int	// 购买类型
 }
 
@@ -378,4 +381,18 @@ type ClientLeaveClubRet struct {
 //--------------------------------------------
 type ClearUserInfo struct {
 	Type 			int
+}
+
+//--------------------------------------------
+// prepay info
+//--------------------------------------------
+type UserPrepay struct {
+	Item 			int
+	Price 			int
+}
+
+type UserPrepayRet struct {
+	ErrCode 		int
+	OrderId 		string
+	Price 			int
 }

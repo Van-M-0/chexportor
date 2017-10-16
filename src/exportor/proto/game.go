@@ -10,6 +10,7 @@ const (
 	CmdGamePlayerReleaseRoom 	= 5006
 	CmdGamePlayerReleaseRoomResponse = 5007
 	CmdGamePlayerRoomChat 		= 5010
+	CmdGameEnterCoinRoom		= 5011
 	CmdGamePlayerMessage 		= 5020
 )
 
@@ -110,4 +111,34 @@ type PlayerGameReleaseRoomResponseRet struct {
 	Released 		bool
 	Agree 			bool
 	Voter			uint32
+}
+
+type PlayerGameEnterCoinRoom struct {
+/*
+	EnterType :
+
+	1. 换房，由一个房间换到另一个房间
+		RoomId 不为0， 且必须是和服务器保持一致才能换
+
+	2. 再次进入房间
+		RoomId 不为0， 且玩家身上原先有这个roomid
+
+	3. 创建房间
+		Kind 不为0， 且必须正确, Conf不为空
+
+	4. 加入金币房间
+		RoomId 不为0， 且玩家身上原先没有房间
+
+	5. 匹配房间
+		Kind 不为0， 且必须正确
+
+*/
+	EnterType 		int
+	Kind 			int
+	RoomId 			int
+	Conf 			[]byte
+}
+
+type PlayerGameEnterCoinRoomRet struct {
+	ErrCode 		int
 }

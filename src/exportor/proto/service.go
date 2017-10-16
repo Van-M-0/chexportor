@@ -18,6 +18,7 @@ type UserData struct {
 
 type DbUserLoginReply struct {
 	Err 			string
+	New 			bool
 	UserItemList 	[]UserItem
 	Ud 				[]byte
 	Identify 		SynceIdentifyInfo
@@ -100,6 +101,7 @@ type MsSelectGameServerReply struct {
 type MsCreateoomIdArg struct {
 	ServerId 		int
 	Conf 			[]byte
+	GameType 		int
 }
 
 type MsCreateRoomIdReply struct {
@@ -125,6 +127,18 @@ type MsGetRoomServerIdReply struct {
 	Conf 			[]byte
 }
 
+type MsGetRoomKindIdArg struct {
+	Kind 			int
+	RoomId 			int
+}
+
+type MsGetRoomKindReply struct {
+	ErrCode 		string
+	ServerId 		int
+	Alive 			bool
+}
+
+
 // master skd service
 type MsSdkWechatLoginArg struct {
 	Code 			string
@@ -141,7 +155,6 @@ type MsSdkWechatLoginReply struct {
 type MsModuleItem struct {
 	Kind 			int
 	GameConf 		[]byte
-	GatewayHost 	string
 }
 
 type MsGameMoudleRegisterArg struct {
@@ -224,6 +237,11 @@ type GameLibItem struct {
 	Province 	string
 }
 
+type GameLibItemP struct {
+	GameLibItem
+	Pid 			int
+}
+
 type MsLoadGameLibsReply struct {
 	ErrCode 	string
 	Libs 		[]GameLibItem
@@ -288,6 +306,16 @@ type MsSaveIdentifyInfoReply struct {
 	ErrCode 			string
 }
 
+type MsUpdateUserPropArg struct {
+	Key 				string
+	UserId 				uint32
+	Diamond 			int
+}
+
+type MsUpdateUserPropReply struct {
+	ErrCode 			string
+}
+
 // club info
 type MsLoadClubInfoReq struct {
 
@@ -323,6 +351,16 @@ type MsClubOperationReply struct {
 	UserId 			uint32
 }
 
+type MsGetAgentUserReq struct {
+	AgentId 		uint32
+	AgentType 		string
+}
+
+type MsGetAgentUserReply struct {
+	ErrCode 		string
+	Uids 			map[uint32]bool
+}
+
 
 // world service
 
@@ -330,6 +368,7 @@ type ModuleInfo struct {
 	Id 				int
 	Province 		string
 	City 			string
+	Area 			string
 	Name 			string
 	Kind 			int
 	Conf 			[]byte
@@ -339,4 +378,34 @@ type ModuleInfo struct {
 type GameModule struct {
 	ModuleConf 		interface{}
 	GatewayHost 	string
+}
+
+
+// world service
+
+type WsGetMasterIdArg struct {
+
+}
+
+type WsGetMasterIdReply struct {
+	Id 				int
+}
+
+type WsRegisterLibsArgs struct {
+	Id 				int
+	MasterIp 		string
+	Items 			[]GameLibItemP
+}
+
+type WsRegisterLibsReply struct {
+	ErrCode 		string
+}
+
+// master pay service
+type MsPayNotifyArg struct {
+	Order 			string
+}
+
+type MsPayNotifyReply struct {
+
 }

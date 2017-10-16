@@ -64,6 +64,10 @@ const (
 	ErrCreateRoomSystme			= 106
 	ErrCreateRoomHaveRoom 		= 107
 	ErrCreateRoomRoomId 		= 108
+	ErrCreateRoomCmd			= 109
+	ErrCreateRoomCreate			= 110
+	ErrCreateRoomType 			= 111
+	ErrCoinCreateRoomMaxCount 	= 112
 
 	ErrEnterRoomSuccess			= 101
 	ErrEnterRoomUserNotIn		= 102
@@ -75,4 +79,12 @@ const (
 	ErrLeaveRoomSuccess			= 101
 	ErrLeaveRoomUserNotIn		= 102
 	ErrLeaveRoomNotExists		= 103
+
+	ErrEnterCoinRoomChangeNotSame = 101
+	ErrEnterCoinRoomEnterNotSame = 102
+	ErrEnterCoinRoomInvalidReq 	= 103
+	ErrEnterCoinRoomHaveRoom	= 104
+	ErrEnterCoinOldRoomNotExist	= 105
+	ErrEnterCoinCategory		= 106
+	ErrEnterCoinRoomChangeInvalid = 107
 )

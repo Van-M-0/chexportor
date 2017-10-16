@@ -45,7 +45,6 @@ type LobbyOption struct {
 }
 
 type GameOption struct {
-	ClientHost 	string
 	GwHost 		string
 	Moudles 	[]GameModule
 }
@@ -65,12 +64,21 @@ type WorldOptoin struct {
 type GameCreateor func() IGame
 type GameReleaser func(IGame)
 type GameModule struct {
-	Type 		int
+	Type 		int			//游戏id
+	GameType 	int			//游戏种类
 	Creator 	GameCreateor
 	Releaser 	GameReleaser
 	GameData 	interface{}
 	GameConf	[]byte
 	PlayerCount int
+}
+
+type GameModuleConfig struct {
+	Enabled 	bool 		//是否开启
+	Desc 		string		//描述
+	Kind 		int			//游戏id
+	GameType 	int			//游戏种类
+	Cfg 		interface{}
 }
 
 type CommunicatorOption struct {
@@ -80,15 +88,26 @@ type CommunicatorOption struct {
 }
 
 type StartConfigFile struct {
-	ClientHost 		string
+
+	ClusterId		int
+
+	WorldHost		string
+
+	ClientVisitIp 	string
+	LocalIp 		string
+
+	//ClientHost 		string
+
 	FrontHost 		string
 	BackendHost 	string
 	HttpHost 		string
-	GameModules 	[]int
-	LocalHost		string
-	WorldHttp 		string
-	WorldHost 		string
+
 	DbName 			string
 	DbUser 			string
 	DbPwd 			string
+
+	WorldService 	string
+	DBService 		string
+	MSservice 		string
+	LobbyService 	string
 }

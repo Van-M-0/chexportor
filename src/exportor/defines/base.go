@@ -39,9 +39,14 @@ const (
 
 var (
 	WDServicePort		= "predefined"
-	MSServicePort		= ":11344"
-	DBSerivcePort 		= ":11345"
-	LbServicePort 		= ":11346"
+	MSServicePort		= "predefined"
+	DBSerivcePort 		= "predefined"
+	LbServicePort 		= "predefined"
+)
+
+var (
+	WorkDir 			string
+	GlobalConfig 		StartConfigFile
 )
 
 const (

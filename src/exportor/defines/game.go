@@ -23,8 +23,13 @@ type PlayerInfo struct {
 }
 
 type CreateRoomConf struct {
+	Type		int
 	RoomId 		uint32
 	Conf 		[]byte
+}
+
+type TimerHandle interface {
+	GetId() int
 }
 
 type IGameManager interface {
@@ -32,8 +37,8 @@ type IGameManager interface {
 	GetRoomId() uint32
 	SendGameMessage(info *PlayerInfo, cmd uint32, data interface{})
 	BroadcastMessage(infos []*PlayerInfo, cmd uint32, data interface{})
-	SetTimer(id uint32, data interface{}) error
-	KillTimer(id uint32) error
+	SetTimer(t uint32, data interface{}) TimerHandle
+	KillTimer(handle TimerHandle) bool
 	SaveGameRecord(head, data []byte) int
 	SaveUserRecord(userid, id int) error
 	UpdateUserInfo(info *PlayerInfo, data *proto.GameUserPpUpdate) bool
@@ -43,7 +48,7 @@ type IGameManager interface {
 }
 
 type IGame interface {
-	OnInit(manager IGameManager, Option interface{}) error
+	OnInit(manager IGameManager, config GameModule) error
 	OnRelease()
 	OnGameCreate(info *PlayerInfo, conf *CreateRoomConf) error
 	OnUserEnter(info *PlayerInfo) error
@@ -54,3 +59,9 @@ type IGame interface {
 	OnTimer(id uint32, data interface{})
 	GetPlayerCount() int
 }
+
+const (
+	GameTypeInvalid			= iota
+	GameTypeRoomCard
+	GameTypeCoin
+)
